@@ -193,7 +193,7 @@ var RIF_USERS = {
     "street": "Kom\u00e1rovsk\u00e1 263/20a",
     "postalCode": "617 00",
     "city": "Brno",
-    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/majersky.julius.orez_.png"
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/dog.png"
   },
   "pospisil.pavel@rifas.cz": {
     "firstName": "Pavel",
@@ -448,7 +448,7 @@ var RIF_PEOPLE = {
     "street": "Kom\u00e1rovsk\u00e1 263/20a",
     "postalCode": "617 00",
     "city": "Brno",
-    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/majersky.julius.orez_.png"
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/dog.png"
   },
   "pospisil.pavel@rifas.cz": {
     "firstName": "Pavel",
