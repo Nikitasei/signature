@@ -8,10 +8,8 @@
 $domain = 'rifas.cz'
 
 # Adresy, kterym add-in NIKDY nevlozi podpis (ponecha jim vlastni / zadny).
-# Prevzato z vyjimek transport rule - zkontroluj, ze plati i pro add-in.
+# Pr.: $exclude = @('noreply@rifas.cz')
 $exclude = @(
-    'dluhopisy@rifas.cz'
-    'info@rifas.cz'
 ) | ForEach-Object { $_.ToLower() }
 
 $jsPath  = Join-Path (Join-Path $PSScriptRoot 'src') 'autorun.js'

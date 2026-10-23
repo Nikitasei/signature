@@ -152,6 +152,16 @@ var RIF_USERS = {
     "city": "Praha",
     "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/zajicek.radim_-2.jpg"
   },
+  "dluhopisy@rifas.cz": {
+    "firstName": "",
+    "lastName": "",
+    "title": "",
+    "phone": "",
+    "street": "",
+    "postalCode": "",
+    "city": "",
+    "photo": ""
+  },
   "jarosik.jan@rifas.cz": {
     "firstName": "Jan",
     "lastName": "Jaro\u0161\u00edk",
@@ -203,6 +213,9 @@ var RIF_USERS = {
     "photo": ""
   },
   "rifas@rifas.cz": {
+    "shared": true
+  },
+  "info@rifas.cz": {
     "shared": true
   },
   "drabkova.jana-backup@rifas.cz": {
