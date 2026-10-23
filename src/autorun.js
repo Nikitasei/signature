@@ -557,11 +557,12 @@ function getFromAddress(cb) {
 function resolveSigner(fromEmail) {
   var entry = RIF_USERS[fromEmail];
   if (!entry) return { user: null, reason: fromEmail + " neni v seznamu RIF (spust export / je ve vyjimkach)." };
-  if (!entry.shared) return { user: entry };
+  if (!entry.shared) return { user: entry, email: fromEmail };
   if (SHARED_MODE !== "person") return { user: null, reason: "podpis pro sdilene schranky je vypnuty (SHARED_MODE)." };
   var me = (Office.context.mailbox.userProfile.emailAddress || "").toLowerCase();
   var person = RIF_PEOPLE[me] || RIF_USERS[me];
-  if (person && !person.shared) return { user: person };
+  // Ze sdilene schranky: udaje i e-mail cloveka, ktery pise
+  if (person && !person.shared) return { user: person, email: me };
   return { user: null, reason: fromEmail + " je sdilena; prihlaseny " + me + " neni mezi lidmi RIF." };
 }
 
@@ -629,7 +630,7 @@ function run(event, verbose) {
           else { done(); }
           return;
         }
-        applyRif(user, email, done);
+        applyRif(user, r.email, done);
       } catch (e) {
         if (verbose) { notify("RIF podpis - chyba: " + e.message, done); } else { done(); }
       }
@@ -653,8 +654,8 @@ function onMessageFromChanged(event) {
   try {
     getFromAddress(function (email) {
       try {
-        var user = resolveSigner(email).user;
-        if (user) { applyRif(user, email, done); } else { removeRif(done); }
+        var r = resolveSigner(email);
+        if (r.user) { applyRif(r.user, r.email, done); } else { removeRif(done); }
       } catch (e) { done(); }
     });
   } catch (e) { done(); }
