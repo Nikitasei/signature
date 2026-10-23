@@ -153,14 +153,7 @@ var RIF_USERS = {
     "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/zajicek.radim_-2.jpg"
   },
   "dluhopisy@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
+    "shared": true
   },
   "jarosik.jan@rifas.cz": {
     "firstName": "Jan",
@@ -417,16 +410,6 @@ var RIF_PEOPLE = {
     "city": "Praha",
     "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/zajicek.radim_-2.jpg"
   },
-  "dluhopisy@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
   "jarosik.jan@rifas.cz": {
     "firstName": "Jan",
     "lastName": "Jaro\u0161\u00edk",
@@ -557,12 +540,14 @@ function getFromAddress(cb) {
 function resolveSigner(fromEmail) {
   var entry = RIF_USERS[fromEmail];
   if (!entry) return { user: null, reason: fromEmail + " neni v seznamu RIF (spust export / je ve vyjimkach)." };
-  if (!entry.shared) return { user: entry, email: fromEmail };
+  // Zaznam bez jmena = sdilena / spolecna schranka (i kdyz je vedena jako UserMailbox)
+  var isShared = entry.shared || (!entry.firstName && !entry.lastName);
+  if (!isShared) return { user: entry, email: fromEmail };
   if (SHARED_MODE !== "person") return { user: null, reason: "podpis pro sdilene schranky je vypnuty (SHARED_MODE)." };
   var me = (Office.context.mailbox.userProfile.emailAddress || "").toLowerCase();
   var person = RIF_PEOPLE[me] || RIF_USERS[me];
   // Ze sdilene schranky: udaje i e-mail cloveka, ktery pise
-  if (person && !person.shared) return { user: person, email: me };
+  if (person && !person.shared && (person.firstName || person.lastName)) return { user: person, email: me };
   return { user: null, reason: fromEmail + " je sdilena; prihlaseny " + me + " neni mezi lidmi RIF." };
 }
 

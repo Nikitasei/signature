@@ -12,6 +12,11 @@ $domain = 'rifas.cz'
 $exclude = @(
 ) | ForEach-Object { $_.ToLower() }
 
+# Schranky typu UserMailbox, ktere se maji chovat jako sdilene (napr. licencovana "dluhopisy@").
+# Schranky bez jmena i prijmeni se jako sdilene berou automaticky.
+$treatAsShared = @(
+) | ForEach-Object { $_.ToLower() }
+
 $jsPath  = Join-Path (Join-Path $PSScriptRoot 'src') 'autorun.js'
 $users   = [ordered]@{}
 $people  = [ordered]@{}
@@ -22,6 +27,15 @@ $mailboxes = Get-Mailbox -RecipientTypeDetails UserMailbox,SharedMailbox -Result
 
 foreach ($mb in $mailboxes) {
     $isShared = $mb.RecipientTypeDetails -eq 'SharedMailbox'
+    $primary  = $mb.PrimarySmtpAddress.ToString().ToLower()
+    if (-not $isShared) {
+        $u = Get-User -Identity $mb.Identity
+        # Schranka bez jmena a prijmeni = "spolecna" schranka vedena jako UserMailbox -> chovat se jako ke sdilene
+        if ($treatAsShared -contains $primary -or (-not $u.FirstName -and -not $u.LastName)) {
+            Write-Warning "${primary}: $($mb.RecipientTypeDetails) bez jmena -> beru jako sdilenou schranku"
+            $isShared = $true
+        }
+    }
     $addrs = $mb.EmailAddresses |
         Where-Object { $_ -match $pattern } |
         ForEach-Object { ($_ -replace '^smtp:', '').ToLower() }
@@ -29,7 +43,6 @@ foreach ($mb in $mailboxes) {
     if ($isShared) {
         $data = [ordered]@{ shared = $true }
     } else {
-        $u = Get-User -Identity $mb.Identity
         $data = [ordered]@{
             firstName  = "$($u.FirstName)"
             lastName   = "$($u.LastName)"
@@ -40,7 +53,7 @@ foreach ($mb in $mailboxes) {
             city       = "$($u.City)"
             photo      = "$($mb.CustomAttribute15)"
         }
-        $people[$mb.PrimarySmtpAddress.ToString().ToLower()] = $data
+        $people[$primary] = $data
         if (-not $u.FirstName -or -not $u.LastName) { Write-Warning "$($mb.PrimarySmtpAddress): chybi FirstName/LastName" }
         if (-not $mb.CustomAttribute15)             { Write-Warning "$($mb.PrimarySmtpAddress): chybi CustomAttribute15 (fotka)" }
     }
