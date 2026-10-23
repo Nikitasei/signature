@@ -152,6 +152,258 @@ var RIF_USERS = {
     "city": "Praha",
     "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/zajicek.radim_-2.jpg"
   },
+  "jarosik.jan@rifas.cz": {
+    "firstName": "Jan",
+    "lastName": "Jaro\u0161\u00edk",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 774 189 974\u202c",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/09/jarosik.jan_.orez_.png"
+  },
+  "kroupa.oldrich@rifas.cz": {
+    "firstName": "Old\u0159ich",
+    "lastName": "Kroupa",
+    "title": "\u0159editel komer\u010dn\u00edho odd\u011blen\u00ed",
+    "phone": "+420 733 551 960",
+    "street": "Kom\u00e1rovsk\u00e1 263/20a",
+    "postalCode": "617 00",
+    "city": "Brno",
+    "photo": ""
+  },
+  "holecek.martin@rifas.cz": {
+    "firstName": "Martin",
+    "lastName": "Hole\u010dek",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 704 773 268",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2025/08/Holecek_emailovy_podpis.png"
+  },
+  "grep.test@rifas.cz": {
+    "firstName": "test",
+    "lastName": "grep",
+    "title": "testing user",
+    "phone": "+420 123 456 789",
+    "street": "Kom\u00e1rovsk\u00e1 263/20a",
+    "postalCode": "617 00",
+    "city": "Brno",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2025/10/allrisk_magazin_2026_kafec_4.png"
+  },
+  "pospisil.pavel@rifas.cz": {
+    "firstName": "Pavel",
+    "lastName": "Posp\u00ed\u0161il",
+    "title": "oblastn\u00ed z\u00e1stupce RIF",
+    "phone": "+420 607 612 471",
+    "street": "Kom\u00e1rovsk\u00e1 263/20a",
+    "postalCode": "617 00",
+    "city": "Brno",
+    "photo": ""
+  },
+  "rifas@rifas.cz": {
+    "shared": true
+  },
+  "drabkova.jana-backup@rifas.cz": {
+    "shared": true
+  },
+  "dufek.pavel-backup@rifas.cz": {
+    "shared": true
+  },
+  "francova.ludmila-backup@rifas.cz": {
+    "shared": true
+  },
+  "holecek.martin-backup@rifas.cz": {
+    "shared": true
+  },
+  "hrebicek.pavel-backup@rifas.cz": {
+    "shared": true
+  },
+  "info-backup@rifas.cz": {
+    "shared": true
+  },
+  "jancovicova.kamila-backup@rifas.cz": {
+    "shared": true
+  },
+  "kedzior.tomas-backup@rifas.cz": {
+    "shared": true
+  },
+  "kovalcikova.eliska-backup@rifas.cz": {
+    "shared": true
+  },
+  "krajcova.jolana-backup@rifas.cz": {
+    "shared": true
+  },
+  "kresta.michal-backup@rifas.cz": {
+    "shared": true
+  },
+  "navrat.petr-backup@rifas.cz": {
+    "shared": true
+  },
+  "pindej.miroslav-backup@rifas.cz": {
+    "shared": true
+  },
+  "plch.adam-backup@rifas.cz": {
+    "shared": true
+  },
+  "pradeniak.andrej-backup@rifas.cz": {
+    "shared": true
+  },
+  "rifas-backup@rifas.cz": {
+    "shared": true
+  },
+  "volfova.klara-backup@rifas.cz": {
+    "shared": true
+  },
+  "vrzal.david-backup@rifas.cz": {
+    "shared": true
+  },
+  "stepanek.frantisek-backup@rifas.cz": {
+    "shared": true
+  }
+};
+var RIF_PEOPLE = {
+  "kedzior.tomas@rifas.cz": {
+    "firstName": "Tom\u00e1\u0161",
+    "lastName": "Kedzior",
+    "title": "\u010dlen spr\u00e1vn\u00ed rady",
+    "phone": "+420 773 745 845",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/kedzior.tomas_.orez_-1.png"
+  },
+  "plch.adam@rifas.cz": {
+    "firstName": "Adam",
+    "lastName": "Plch",
+    "title": "risk mana\u017eer",
+    "phone": "+420 773 745 592",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/05/plch.adam_.png"
+  },
+  "kresta.michal@rifas.cz": {
+    "firstName": "Michal",
+    "lastName": "Kresta",
+    "title": "p\u0159edseda spr\u00e1vn\u00ed rady",
+    "phone": "+420 770 175 948",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/05/kresta.michal.png"
+  },
+  "dufek.pavel@rifas.cz": {
+    "firstName": "Pavel",
+    "lastName": "Dufek",
+    "title": "region\u00e1ln\u00ed mana\u017eer",
+    "phone": "+420 776 152 877",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2025/01/pan_dufek_kruh.png"
+  },
+  "hrebicek.pavel@rifas.cz": {
+    "firstName": "Pavel",
+    "lastName": "H\u0159eb\u00ed\u010dek",
+    "title": "region\u00e1ln\u00ed \u0159editel Morava",
+    "phone": "+420 605 252 405",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/hrebicek.pavel_.ctverec.png"
+  },
+  "pindej.miroslav@rifas.cz": {
+    "firstName": "Miroslav",
+    "lastName": "Pindej",
+    "title": "region\u00e1ln\u00ed mana\u017eer",
+    "phone": "+421 944 707 214",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2024/12/kulicka_fotka_email.png"
+  },
+  "kovalcikova.eliska@rifas.cz": {
+    "firstName": "Eli\u0161ka",
+    "lastName": "Koval\u010d\u00edkov\u00e1",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 775 370 680",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2023/11/Kovalcikova_2023.png"
+  },
+  "stepanek.frantisek@rifas.cz": {
+    "firstName": "Franti\u0161ek",
+    "lastName": "\u0160t\u011bp\u00e1nek",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 725 353 099",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2025/02/stepanek_frantisek.png"
+  },
+  "jancovicova.kamila@rifas.cz": {
+    "firstName": "Kamila",
+    "lastName": "Jan\u010dovi\u010dov\u00e1",
+    "title": "realitn\u00ed specialista",
+    "phone": "+420 777 132 013",
+    "street": "Na St\u0159elnici 336/6",
+    "postalCode": "779 00",
+    "city": "Olomouc",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2025/01/pani_jancovicova_kruh.png"
+  },
+  "krajcova.jolana@rifas.cz": {
+    "firstName": "Jolana",
+    "lastName": "Kraj\u010dov\u00e1",
+    "title": "realitn\u00ed mana\u017eer",
+    "phone": "+420 608 713 758",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2024/05/Krajcova_RM.png"
+  },
+  "navrat.petr@rifas.cz": {
+    "firstName": "Petr",
+    "lastName": "N\u00e1vrat",
+    "title": "region\u00e1ln\u00ed \u0159editel \u010cechy",
+    "phone": "+420 725 293 467",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha ",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2023/11/petr_navrat_2023.png"
+  },
+  "pradeniak.andrej@rifas.cz": {
+    "firstName": "Andrej",
+    "lastName": "Pradeniak",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 733 747 571",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2023/10/pradeniak_2023.png"
+  },
+  "volfova.klara@rifas.cz": {
+    "firstName": "Kl\u00e1ra",
+    "lastName": "Volfov\u00e1",
+    "title": "region\u00e1ln\u00ed mana\u017eer",
+    "phone": "+420 602 320 528",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/volfova.klara_.orez_-1.png"
+  },
+  "zajicek.radim@rifas.cz": {
+    "firstName": "Radim",
+    "lastName": "Zaj\u00ed\u010dek",
+    "title": "oblastn\u00ed z\u00e1stupce",
+    "phone": "+420 725 425 738",
+    "street": "Vinohradsk\u00e1 2516/28",
+    "postalCode": "120 00",
+    "city": "Praha",
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/06/zajicek.radim_-2.jpg"
+  },
   "dluhopisy@rifas.cz": {
     "firstName": "",
     "lastName": "",
@@ -211,229 +463,17 @@ var RIF_USERS = {
     "postalCode": "617 00",
     "city": "Brno",
     "photo": ""
-  },
-  "podpis.rif@rifas.cz": {
-    "firstName": "podpis",
-    "lastName": "rif",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "rifas@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "info@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "drabkova.jana-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "dufek.pavel-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "francova.ludmila-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "holecek.martin-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "hrebicek.pavel-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "info-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "jancovicova.kamila-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "kedzior.tomas-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "kovalcikova.eliska-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "krajcova.jolana-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "kresta.michal-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "navrat.petr-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "pindej.miroslav-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "plch.adam-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "pradeniak.andrej-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "rifas-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "volfova.klara-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "vrzal.david-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
-  },
-  "stepanek.frantisek-backup@rifas.cz": {
-    "firstName": "",
-    "lastName": "",
-    "title": "",
-    "phone": "",
-    "street": "",
-    "postalCode": "",
-    "city": "",
-    "photo": ""
   }
 };
 // USERS-END
+
+/*
+ * Co vlozit pri psani ze SDILENE schranky @rifas.cz:
+ *   "person" = podpis toho, kdo pise (jmeno, funkce, telefon, fotka), ale s adresou sdilene schranky
+ *   "none"   = zadny podpis
+ * Kdo neni v RIF_PEOPLE (napr. clovek z jine firmy), nedostane nic.
+ */
+var SHARED_MODE = "person";
 
 var SIG_HEADER = "X-RIF-Signature";
 
@@ -500,6 +540,17 @@ function getFromAddress(cb) {
   }
 }
 
+/* Najde udaje do podpisu pro adresu v From; null = podpis nevkladat */
+function resolveSigner(fromEmail) {
+  var entry = RIF_USERS[fromEmail];
+  if (!entry) return null;
+  if (!entry.shared) return entry;
+  if (SHARED_MODE !== "person") return null;
+  var me = (Office.context.mailbox.userProfile.emailAddress || "").toLowerCase();
+  var person = RIF_PEOPLE[me] || RIF_USERS[me];
+  return person && !person.shared ? person : null;
+}
+
 function applyRif(user, email, done) {
   var item = Office.context.mailbox.item;
   var setSig = function () {
@@ -556,10 +607,10 @@ function run(event, verbose) {
   try {
     getFromAddress(function (email) {
       try {
-        var user = RIF_USERS[email];
+        var user = resolveSigner(email);
         if (!user) {
-          // Neni RIF identita -> nesahame na nic (podpis resi transport rule / Outlook).
-          if (verbose) { notify("RIF podpis: adresa " + email + " neni v seznamu (spust export-users.ps1).", done); }
+          // Neni RIF identita / vyjimka / sdilena schranka bez podpisu -> nesahame na nic (podpis resi transport rule / Outlook).
+          if (verbose) { notify("RIF podpis: pro adresu " + email + " se podpis nevklada (neni v seznamu, vyjimka nebo sdilena schranka).", done); }
           else { done(); }
           return;
         }
@@ -587,7 +638,7 @@ function onMessageFromChanged(event) {
   try {
     getFromAddress(function (email) {
       try {
-        var user = RIF_USERS[email];
+        var user = resolveSigner(email);
         if (user) { applyRif(user, email, done); } else { removeRif(done); }
       } catch (e) { done(); }
     });
@@ -606,5 +657,5 @@ if (typeof Office !== "undefined" && Office.actions && Office.actions.associate)
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { buildSignature: buildSignature, RIF_USERS: RIF_USERS };
+  module.exports = { buildSignature: buildSignature, RIF_USERS: RIF_USERS, RIF_PEOPLE: RIF_PEOPLE };
 }
