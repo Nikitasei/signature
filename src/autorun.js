@@ -212,6 +212,16 @@ var RIF_USERS = {
     "city": "Brno",
     "photo": ""
   },
+  "podpis.rif@rifas.cz": {
+    "firstName": "podpis",
+    "lastName": "rif",
+    "title": "",
+    "phone": "",
+    "street": "",
+    "postalCode": "",
+    "city": "",
+    "photo": ""
+  },
   "rifas@rifas.cz": {
     "firstName": "",
     "lastName": "",
@@ -522,35 +532,71 @@ function removeRif(done) {
   });
 }
 
+/* Informacni lista nad zpravou (jen pro rucni tlacitko, at je videt proc se nic nestalo) */
+function notify(text, done) {
+  var item = Office.context.mailbox.item;
+  try {
+    item.notificationMessages.replaceAsync("rifInfo", {
+      type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
+      message: String(text).substring(0, 150),
+      icon: "Icon16",
+      persistent: false
+    }, function () { done(); });
+  } catch (e) {
+    done();
+  }
+}
+
+/* Spolecna logika; verbose = ukazat duvod, kdyz se podpis nevlozi */
+function run(event, verbose) {
+  var finished = false;
+  var done = function () {
+    if (!finished) { finished = true; event.completed(); }
+  };
+  try {
+    getFromAddress(function (email) {
+      try {
+        var user = RIF_USERS[email];
+        if (!user) {
+          // Neni RIF identita -> nesahame na nic (podpis resi transport rule / Outlook).
+          if (verbose) { notify("RIF podpis: adresa " + email + " neni v seznamu (spust export-users.ps1).", done); }
+          else { done(); }
+          return;
+        }
+        applyRif(user, email, done);
+      } catch (e) {
+        if (verbose) { notify("RIF podpis - chyba: " + e.message, done); } else { done(); }
+      }
+    });
+  } catch (e) {
+    if (verbose) { notify("RIF podpis - chyba: " + e.message, done); } else { done(); }
+  }
+}
+
 /* Nova zprava, odpoved, preposlani */
 function onNewMessageCompose(event) {
-  getFromAddress(function (email) {
-    var user = RIF_USERS[email];
-    if (!user) {
-      // Neni RIF identita -> nesahame na nic (podpis resi transport rule / Outlook).
-      event.completed();
-      return;
-    }
-    applyRif(user, email, function () { event.completed(); });
-  });
+  run(event, false);
 }
 
 /* Uzivatel prepnul From */
 function onMessageFromChanged(event) {
-  getFromAddress(function (email) {
-    var user = RIF_USERS[email];
-    var done = function () { event.completed(); };
-    if (user) {
-      applyRif(user, email, done);
-    } else {
-      removeRif(done);
-    }
-  });
+  var finished = false;
+  var done = function () {
+    if (!finished) { finished = true; event.completed(); }
+  };
+  try {
+    getFromAddress(function (email) {
+      try {
+        var user = RIF_USERS[email];
+        if (user) { applyRif(user, email, done); } else { removeRif(done); }
+      } catch (e) { done(); }
+    });
+  } catch (e) { done(); }
 }
 
 /* Tlacitko na pase karet - rucni vlozeni (napr. kdyz uzivatel podpis smaze) */
 function insertRifSignature(event) {
-  onNewMessageCompose(event);
+  run(event, true);
 }
 
 if (typeof Office !== "undefined" && Office.actions && Office.actions.associate) {
