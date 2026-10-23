@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pred nahranim nahrad vsechny vyskyty https://YOUR-HOST za adresu, kde budou soubory hostovane (HTTPS). -->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="MailApp">
+  <Id>5be3e2e4-6982-4e42-92a8-96df2106c943</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Allrisk IT</ProviderName>
+  <DefaultLocale>cs-CZ</DefaultLocale>
+  <DisplayName DefaultValue="RIF podpis"/>
+  <Description DefaultValue="Automaticky vklada firemni podpis Realitniho &amp; investorskeho fondu."/>
+  <IconUrl DefaultValue="https://YOUR-HOST/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://YOUR-HOST/assets/icon-128.png"/>
+  <SupportUrl DefaultValue="https://www.rifas.cz"/>
+  <AppDomains>
+    <AppDomain>https://YOUR-HOST</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://YOUR-HOST/src/autorun.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+  <DisableEntityHighlighting>true</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Description resid="residAppDesc"/>
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.10">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <Runtimes>
+            <!-- HTML runtime pro OWA, novy Outlook a Mac; JS runtime (Override) pro klasicky Outlook na Windows -->
+            <Runtime resid="Autorun">
+              <Override type="javascript" resid="runtimeJs"/>
+            </Runtime>
+          </Runtimes>
+          <DesktopFormFactor>
+            <FunctionFile resid="Autorun"/>
+
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="rifGroup">
+                  <Label resid="residGroup"/>
+                  <Control xsi:type="Button" id="rifInsertBtn">
+                    <Label resid="residBtn"/>
+                    <Supertip>
+                      <Title resid="residBtn"/>
+                      <Description resid="residBtnDesc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon16"/>
+                      <bt:Image size="32" resid="Icon32"/>
+                      <bt:Image size="80" resid="Icon80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>insertRifSignature</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+
+            <ExtensionPoint xsi:type="LaunchEvent">
+              <LaunchEvents>
+                <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageCompose"/>
+                <LaunchEvent Type="OnMessageFromChanged" FunctionName="onMessageFromChanged"/>
+              </LaunchEvents>
+              <SourceLocation resid="Autorun"/>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Resources>
+        <bt:Images>
+          <bt:Image id="Icon16" DefaultValue="https://YOUR-HOST/assets/icon-16.png"/>
+          <bt:Image id="Icon32" DefaultValue="https://YOUR-HOST/assets/icon-32.png"/>
+          <bt:Image id="Icon80" DefaultValue="https://YOUR-HOST/assets/icon-80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="Autorun" DefaultValue="https://YOUR-HOST/src/autorun.html"/>
+          <bt:Url id="runtimeJs" DefaultValue="https://YOUR-HOST/src/autorun.js"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="residGroup" DefaultValue="RIF"/>
+          <bt:String id="residBtn" DefaultValue="Vlozit RIF podpis"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="residAppDesc" DefaultValue="Automaticky vklada firemni podpis RIF."/>
+          <bt:String id="residBtnDesc" DefaultValue="Znovu vlozi firemni podpis RIF do rozepsane zpravy."/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>
