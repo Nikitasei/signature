@@ -193,7 +193,7 @@ var RIF_USERS = {
     "street": "Kom\u00e1rovsk\u00e1 263/20a",
     "postalCode": "617 00",
     "city": "Brno",
-    "photo": "https://www.reddit.com/r/hoi4/comments/1qaml82/discovered_these_as_leaders_while_digging_through/"
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/Screenshot-2026-10-23-at-14-55-01.png"
   },
   "pospisil.pavel@rifas.cz": {
     "firstName": "Pavel",
@@ -448,7 +448,7 @@ var RIF_PEOPLE = {
     "street": "Kom\u00e1rovsk\u00e1 263/20a",
     "postalCode": "617 00",
     "city": "Brno",
-    "photo": "https://www.reddit.com/r/hoi4/comments/1qaml82/discovered_these_as_leaders_while_digging_through/"
+    "photo": "https://www.allrisk.cz/wp-content/uploads/2026/10/Screenshot-2026-10-23-at-14-55-01.png"
   },
   "pospisil.pavel@rifas.cz": {
     "firstName": "Pavel",
