@@ -553,15 +553,16 @@ function getFromAddress(cb) {
   }
 }
 
-/* Najde udaje do podpisu pro adresu v From; null = podpis nevkladat */
+/* Najde udaje do podpisu pro adresu v From; user = null -> podpis nevkladat, reason = proc */
 function resolveSigner(fromEmail) {
   var entry = RIF_USERS[fromEmail];
-  if (!entry) return null;
-  if (!entry.shared) return entry;
-  if (SHARED_MODE !== "person") return null;
+  if (!entry) return { user: null, reason: fromEmail + " neni v seznamu RIF (spust export / je ve vyjimkach)." };
+  if (!entry.shared) return { user: entry };
+  if (SHARED_MODE !== "person") return { user: null, reason: "podpis pro sdilene schranky je vypnuty (SHARED_MODE)." };
   var me = (Office.context.mailbox.userProfile.emailAddress || "").toLowerCase();
   var person = RIF_PEOPLE[me] || RIF_USERS[me];
-  return person && !person.shared ? person : null;
+  if (person && !person.shared) return { user: person };
+  return { user: null, reason: fromEmail + " je sdilena; prihlaseny " + me + " neni mezi lidmi RIF." };
 }
 
 function applyRif(user, email, done) {
@@ -620,10 +621,11 @@ function run(event, verbose) {
   try {
     getFromAddress(function (email) {
       try {
-        var user = resolveSigner(email);
+        var r = resolveSigner(email);
+        var user = r.user;
         if (!user) {
           // Neni RIF identita / vyjimka / sdilena schranka bez podpisu -> nesahame na nic (podpis resi transport rule / Outlook).
-          if (verbose) { notify("RIF podpis: pro adresu " + email + " se podpis nevklada (neni v seznamu, vyjimka nebo sdilena schranka).", done); }
+          if (verbose) { notify("RIF podpis: " + r.reason, done); }
           else { done(); }
           return;
         }
@@ -651,7 +653,7 @@ function onMessageFromChanged(event) {
   try {
     getFromAddress(function (email) {
       try {
-        var user = resolveSigner(email);
+        var user = resolveSigner(email).user;
         if (user) { applyRif(user, email, done); } else { removeRif(done); }
       } catch (e) { done(); }
     });
