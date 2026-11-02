@@ -185,9 +185,9 @@ var RIF_USERS = {
     "city": "Praha",
     "photo": "https://www.allrisk.cz/wp-content/uploads/2025/08/Holecek_emailovy_podpis.png"
   },
-  "grep.test@rifas.cz": {
-    "firstName": "test",
-    "lastName": "grep",
+  "rif.test@rifas.cz": {
+    "firstName": "Test",
+    "lastName": "RIF",
     "title": "testing user",
     "phone": "+420 123 456 789",
     "street": "Kom\u00e1rovsk\u00e1 263/20a",
