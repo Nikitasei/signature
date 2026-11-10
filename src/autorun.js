@@ -105,7 +105,7 @@ var RIF_USERS = {
   "krajcova.jolana@rifas.cz": {
     "firstName": "Jolana",
     "lastName": "Kraj\u010dov\u00e1",
-    "title": "realitn\u00ed mana\u017eer",
+    "title": "region\u00e1ln\u00ed mana\u017eer",
     "phone": "+420 608 713 758",
     "street": "Vinohradsk\u00e1 2516/28",
     "postalCode": "120 00",
@@ -363,7 +363,7 @@ var RIF_PEOPLE = {
   "krajcova.jolana@rifas.cz": {
     "firstName": "Jolana",
     "lastName": "Kraj\u010dov\u00e1",
-    "title": "realitn\u00ed mana\u017eer",
+    "title": "region\u00e1ln\u00ed mana\u017eer",
     "phone": "+420 608 713 758",
     "street": "Vinohradsk\u00e1 2516/28",
     "postalCode": "120 00",
